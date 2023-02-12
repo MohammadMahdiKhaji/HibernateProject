@@ -27,9 +27,11 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("token", TokenController.getTokenController().save(req.getParameter("username"), req.getParameter("password")).getToken());
                 session.setAttribute("role", Classification.Manager);
-                doGet(req, resp);
+                SessionManager.addHttpSession(req.getSession());
+                req.getRequestDispatcher("panel").forward(req, resp);
             }else {
-                doGet(req, resp);
+                SessionManager.addHttpSession(req.getSession());
+                req.getRequestDispatcher("panel").forward(req, resp);
             }
         }else {
             resp.sendRedirect("login.jsp");
@@ -38,7 +40,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        SessionManager.addHttpSession(req.getSession());
-        req.getRequestDispatcher("panel").forward(req, resp);
+
     }
 }

@@ -1,6 +1,7 @@
 package ir.webapp.startup.controller.servlet;
 
 import ir.webapp.startup.controller.app.UserAccessController;
+import ir.webapp.startup.model.entity.enumeration.Classification;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,7 +22,8 @@ public class SignUpServlet extends HttpServlet {
                 req.getParameter("lastname"),
                 req.getParameter("email"),
                 Date.valueOf(req.getParameter("birthdate")),
-                req.getParameter("city")));
+                req.getParameter("city"),
+                Classification.Client));
         resp.sendRedirect("/login");
     }
 }

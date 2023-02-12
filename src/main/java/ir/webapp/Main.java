@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(UserAccessController.getUserAccessController().save("admin", "admin", "admin", "admin", "admin@admin.com", Date.valueOf(LocalDate.now()), "tehran"));
+        System.out.println(UserAccessController.getUserAccessController().save("admin", "admin", "admin", "admin", "admin@admin.com", Date.valueOf(LocalDate.now()), "tehran", Classification.Manager));
+        System.out.println(UserAccessController.getUserAccessController().save("sina", "sina", "sina", "sina", "sina@sina.com", Date.valueOf(LocalDate.now()), "tehran", Classification.Client));
     }
 }

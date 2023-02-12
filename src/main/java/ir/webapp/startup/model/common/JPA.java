@@ -6,6 +6,7 @@ import jakarta.persistence.Persistence;
 
 public class JPA {
     private static JPA jpa = new JPA();
+
     private EntityManagerFactory factory = Persistence.createEntityManagerFactory("automation");
 
     private JPA(){}

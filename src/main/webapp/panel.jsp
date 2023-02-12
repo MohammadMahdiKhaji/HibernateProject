@@ -1,16 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sina
-  Date: 1/9/2023
-  Time: 6:55 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>panel</title>
 </head>
 <body>
+<div>
     <table>
         <thead>
         <tr>
@@ -25,5 +21,43 @@
         </tr>
         </tbody>
     </table>
+</div>
+<div>
+<%--<c:if test="${sessionScope.role}" >--%>
+<%--    <c:when test="Manager">--%>
+        <div>
+            <form action="/message" method="get">
+                <input type="text" name="message">
+                <input type="submit">
+            </form>
+        </div>
+<%--    </c:when>--%>
+<%--    <c:otherwise>--%>
+        <div>
+            <button onclick="message()">Get Messages</button>
+            <input type="text" id="message">
+        </div>
+<%--    </c:otherwise>--%>
+<%--</c:if>--%>
+</div>
 </body>
+<script >
+
+    var webSocket = new WebSocket("ws://localhost:80/messagendpoint")
+
+    webSocket.onopen = function (message) {
+        console.log("Open")
+    };
+    webSocket.onclose = function (message) {
+        console.log("Close")
+    };
+    webSocket.onmessage = function (message) {
+        console.log("Message");
+        document.getElementById("message").innerHTML = message.data;
+    };
+    webSocket.onerror = function (message) {
+        console.log("Error")
+    };
+
+</script>
 </html>

@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity(name = "messageEntity")
 @Table(name = "message")
-@NamedQueries({@NamedQuery(name = "findAllPerson", query = "select oo from messageEntity oo")})
+@NamedQueries({@NamedQuery(name = "findAllMessages", query = "select oo from messageEntity oo")})
 
 public class Message extends BaseEntity {
 

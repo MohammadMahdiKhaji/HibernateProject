@@ -22,11 +22,11 @@ public class UserAccessController {
 
 
     //signup
-    public static UserAccess save(String username, String password, String firstname, String lastname, String email, Date birthDate, String city) {
+    public static UserAccess save(String username, String password, String firstname, String lastname, String email, Date birthDate, String city, Classification classification) {
         try {
             return UserAccessService
                         .getUserAccessService()
-                            .save(new UserAccess(new Person(firstname, lastname, email, birthDate, city), username, password, Classification.Manager));
+                            .save(new UserAccess(new Person(firstname, lastname, email, birthDate, city), username, password, classification));
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

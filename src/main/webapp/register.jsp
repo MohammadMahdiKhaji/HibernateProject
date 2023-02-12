@@ -10,55 +10,34 @@
 <html lang="fa">
 
 <head>
-    <title>ODDO - قالب HTML فرم ثبت نام و ورود اُددو</title>
+    <title>SignUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <jsp:include page="assets/Include.jsp"></jsp:include>
 </head>
 <body id="top" dir="rtl">
-<div class="page_loader"></div>
-<!-- Login 26 start -->
-<div class="login-26">
-    <div id="particles-js"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="form-section">
-                    <div class="logo-2">
-                        <a href="html/login-26.html">
-                            <img src="assets/img/logos/logo-2.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="main-title">
-                        <h3 class="headline">
-                            <span>ایجاد</span>
-                            <span class="words-wrapper">
-                                <b class="visible">حساب کاربری</b>
-                                <b class="blue">حساب کاربری</b>
-                            </span>
-                        </h3>
-                    </div>
-                    <form action="/signup" method="post">
-                        <div class="form-group clearfix">
-                            <input name="username" type="text" class="form-control" placeholder="نام کاربری" aria-label="Full Name">
+<div>
+    <form action="/signup" method="post">
+        <div>
+                            <input name="username" type="text" placeholder="نام کاربری" aria-label="Full Name">
                         </div>
-                        <div class="form-group clearfix">
-                            <input name="password" type="password" class="form-control" autocomplete="off" placeholder="رمز عبور" aria-label="Password">
+        <div>
+                            <input name="password" type="password" autocomplete="off" placeholder="رمز عبور" aria-label="Password">
                         </div>
-                        <div class="form-group clearfix">
-                            <input name="firstname" type="text" class="form-control" placeholder="نام" aria-label="Full Name">
+        <div>
+                            <input name="firstname" type="text" placeholder="نام" aria-label="Full Name">
                         </div>
-                        <div class="form-group clearfix">
-                            <input name="lastname" type="text" class="form-control" placeholder="نام خانوادگی" aria-label="Full Name">
+        <div>
+                            <input name="lastname" type="text" placeholder="نام خانوادگی" aria-label="Full Name">
                         </div>
-                        <div class="form-group clearfix">
-                            <input name="email" type="email" class="form-control" placeholder="پست الکترونیکی" aria-label="Email Address">
+        <div>
+                            <input name="email" type="email" placeholder="پست الکترونیکی" aria-label="Email Address">
                         </div>
-                        <div class="form-group clearfix">
-                            <input name="birthdate" type="date" class="form-control" placeholder="تاریخ تولد" aria-label="BirthDate">
+        <div>
+                            <input name="birthdate" type="date" placeholder="تاریخ تولد" aria-label="BirthDate">
                         </div>
-                        <div class="form-group clearfix">
-                            <select id="country-state" name="state" class="form-control">
+        <div>
+                            <select id="country-state" name="state">
                                 <option value="32">Alborz Province</option>
                                 <option value="03">Ardabil Province</option>
                                 <option value="06">Bushehr Province</option>
@@ -91,16 +70,11 @@
                                 <option value="11">Zanjan Province</option>
                             </select>
                         </div>
-                        <div class="form-group mb-0 clearfix">
-                            <button type="submit" class="btn btn-lg btn-primary btn-theme">ثبت نام</button>
+        <div>
+                            <button type="submit">ثبت نام</button>
                         </div>
-                    </form>
-                    <p>حساب کاربری دارید؟ <a href="html/login-26.html" class="thembo">از اینجا وارد شوید</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
+    <p>حساب کاربری دارید؟ <a href="login.jsp">از اینجا وارد شوید</a></p>
 </div>
-<!-- Login 26 end -->
 </body>
 </html>
